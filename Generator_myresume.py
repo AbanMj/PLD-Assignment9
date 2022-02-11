@@ -9,19 +9,19 @@ JSONfileinfos = open('myresume.json', 'r')
 JSONfile = JSONfileinfos.read()
 file = json.loads(JSONfile)
 
-pdf.image ('border1.png', 0, -4, 250 )
+pdf.image ('border1.png', 0, -10, 250 )
 pdf.set_font ('arial', '',  2)
 pdf.cell(100,32,"                ", ln= True,)
 pdf.image ('profile2.png', 140, 23, 45 )
 
 pdf.set_font ('arial', 'B',  20)
-pdf.cell (150,5, ' MJ SALAS', ln=True, )
+pdf.cell (150,5, file [0] ['Name'], ln=True, )
 pdf.set_font ('arial', 'I',  12)
-pdf.cell (140,5, ' Seoul, South Korea', ln=True,)
+pdf.cell (140,5, file [0] ['Address'], ln=True,)
 pdf.set_font ('arial', 'I',  12)
-pdf.cell (150,5, '  mjsalas@yahoo.com', ln=True, )
+pdf.cell (150,5, file [0] ['Email'], ln=True, )
 pdf.set_font ('arial', 'I',  12)
-pdf.cell (150,5, '  0921-543-6789', ln=True,)
+pdf.cell (150,5, file [0] ['Cellphone'], ln=True,)
 
 
 #Obj.
@@ -30,8 +30,8 @@ pdf.set_text_color (r= 255, g= 128, b= 128)
 pdf.cell (120,10, 'OBJECTIVE', ln=True)
 pdf.set_font ('arial', '',  12)
 pdf.set_text_color (r= 0, g= 0, b= 0)
-pdf.cell(50,4, '                Detail-oriented software engineer with 5 years of experience and looking for transition into', ln=True)
-pdf.cell(50,4,  '         the role of an IT-focused project manager.', ln=True,)
+pdf.cell(50,4, file [0] ['Objective1'], ln=True)
+pdf.cell(50,4, file [0] ['Objective2'], ln=True,)
 
 #PI
 pdf.set_font ('arial', 'B',  14)
@@ -75,13 +75,12 @@ pdf.set_text_color (r= 255, g= 128, b= 128)
 pdf.cell (120,10, 'SKILLS', ln=True)
 pdf.set_font ('arial', '',  12)
 pdf.set_text_color (r= 0, g= 0, b= 0)
-pdf.cell(50,4, file [0] ['Computer'], ln=True,)
-pdf.cell(50,4, file [0] ['Computer'], ln=True,)
-pdf.cell(50,4, file [0] ['Software'], ln=True,)
-pdf.cell(50,4, file [0] ['Adapt'], ln=True,)
-pdf.cell(50,4, file [0] ['Creativity'], ln=True,)
-pdf.cell(50,4, file [0] ['Leadership'], ln=True,)
-pdf.cell(50,4, file [0] ['Work'], ln=True,)
+pdf.cell(50,4, file [0] ['Skill1'], ln=True,)
+pdf.cell(50,4, file [0] ['Skill2'], ln=True,)
+pdf.cell(50,4, file [0] ['Skill3'], ln=True,)
+pdf.cell(50,4, file [0] ['Skill4'], ln=True,)
+pdf.cell(50,4, file [0] ['Skill5'], ln=True,)
+pdf.cell(50,4, file [0] ['Skill6'], ln=True,)
 
 #CR
 pdf.set_font ('arial', 'B',  14)
@@ -99,13 +98,13 @@ pdf.cell(50,4, file [0] ['Reference 2'], ln=True,)
 
 
 pdf.set_font ('arial', 'I',  10)
-pdf.cell(70, 10, "                  I hereby certify that the information above is just echos lang, for school activity only.",ln= True)
+pdf.cell(70, 10, file [0] ['Certify'],ln= True)
 
 pdf.set_font ('arial', 'U', 12)
-pdf.cell(350,5,"   MJ SALAS ", ln= True, align='C')
+pdf.cell(350,7, file [0] ['Name'], ln= True, align='C')
 pdf.set_font ('arial', '', 12)
-pdf.cell(350,3,"Applicant", ln=True, align='C')
+pdf.cell(350,3, file [0] ['Applicant'], ln=True, align='C')
 
 pdf.image ('border.png', 0, 253, 250 )
 
-pdf.output ('aban_1.pdf')
+pdf.output ('ABAN_MARY_JOY.pdf')
